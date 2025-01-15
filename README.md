@@ -19,11 +19,11 @@ We have a server running on `https://localhost:3001` exposing 3 APIs:
 Sample request:
 
 ```bash
-curl --location 'http://localhost:3001/data?afterDate=2024-10-10T12%3A39%3A40.895Z&limit=10' \
+curl --location 'http://localhost:3001/data?afterDate=2024-10-10T12:39:40.895Z&limit=10' \
 --header 'x-session-id: 0c0f9c33c231616bdad85ab31868bc1fae356ade1b6a796840a3175be01f950f'
 ```
 
-Sample response:
+Sample response (entities will be sorted by date in ascending order)
 
 ```json
 [
@@ -69,6 +69,7 @@ Sample response:
     }
 ]
 ```
+
 
 On frontend (live preview in https://localhost:3000), please implement (in `App.tsx`):
 
