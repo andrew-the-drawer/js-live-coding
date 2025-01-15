@@ -13,7 +13,27 @@ Time limit: 40 mins
 We have a server running on `https://localhost:3001` exposing 3 APIs:
 
 - `/login`: Login stub endpoint. This will return a session ID in the response.
+
+```bash
+curl --location --request POST 'http://localhost:3001/login'
+```
+
+```json
+{
+    "sessionId": "dda1cdcda48d004d6d7d0e2ba71904e46dff0f1f5bbe12fbdc53c1170525f131"
+}
+```
+
+
+
 - `/logout`: Logout the current session created by `login` endpoint. Need to supply the header `x-session-id: <login-session-id>` where `<login-session-id>` coming from the header.
+
+```bash
+curl --location --request DELETE 'http://localhost:3001/logout' \
+--header 'x-session-id: 0c0f9c33c231616bdad85ab31868bc1fae356ade1b6a796840a3175be01f950f'
+```
+
+
 - `/data`: 
 
 Sample request:
