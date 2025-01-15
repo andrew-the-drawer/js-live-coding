@@ -23,6 +23,9 @@ const generateRandomData = () => {
 }
 
 const createSession = () => {
+    if(Object.keys(sessionDB).length > 100) {
+        return null;
+    }
     const sessionId = crypto.randomBytes(32).toString('hex');
 
     sessionDB[sessionId] = {

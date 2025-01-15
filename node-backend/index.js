@@ -9,7 +9,12 @@ app.use(express.json());
 
 app.post('/login', (req, res) => {
     const sessionId = createSession();
-    return res.status(200).json({ sessionId });
+    if(!sessionId) {
+        res.status(400).json({
+            error: 'Session limit reached. Might need to restart the server'
+        })
+    }
+    return res.status(201).json({ sessionId });
 });
 
 app.delete('/logout', (req, res) => {

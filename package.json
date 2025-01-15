@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-exercise:dev": "npm run dev -w react-exercise",
-    "node-backend:dev": "npm run dev -w node-backend"
+    "node-backend:dev": "npm run dev -w node-backend",
+    "install": "npm install -w react-exercise && npm install -w node-backend"
   },
   "keywords": [
     "live-coding",
